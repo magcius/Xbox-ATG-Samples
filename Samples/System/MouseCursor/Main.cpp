@@ -142,8 +142,8 @@ public:
             ref new Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice ^, Windows::Devices::Input::MouseEventArgs ^>( this, &ViewProvider::OnMouseMoved );
         
         // Handler for dealing with losing the capture mode 
-        window->PointerCaptureLost +=
-            ref new Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow ^, Windows::UI::Core::PointerEventArgs ^>( this, &ViewProvider::OnPointerCaptureLost );
+        // window->PointerCaptureLost +=
+        //    ref new Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow ^, Windows::UI::Core::PointerEventArgs ^>( this, &ViewProvider::OnPointerCaptureLost );
         
         window->KeyDown +=
             ref new Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow ^, Windows::UI::Core::KeyEventArgs ^>( this, &ViewProvider::OnKeyDown );
@@ -229,9 +229,9 @@ protected:
 
         CoreWindow::GetForCurrentThread()->Activate();
 
-        view->FullScreenSystemOverlayMode = FullScreenSystemOverlayMode::Standard;
+        // view->FullScreenSystemOverlayMode = FullScreenSystemOverlayMode::Standard;
 
-        CoreApplication::GetCurrentView()->TitleBar->ExtendViewIntoTitleBar = true;
+        // CoreApplication::GetCurrentView()->TitleBar->ExtendViewIntoTitleBar = true;
 
         view->TryResizeView(desiredSize);
     }
@@ -377,7 +377,7 @@ protected:
 
                 // Set the pointer cursor to null. This causes the windows mouse to disappear so the 
                 // app or game's mouse can then be drawn. 
-                sender->SetPointerCapture();
+                // sender->SetPointerCapture();
                 sender->PointerCursor = nullptr;
                 
                 // Save the pointers position
